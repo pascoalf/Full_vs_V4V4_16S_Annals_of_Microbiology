@@ -6,8 +6,8 @@ library(stringr)
 library(purrr)
 library(vegan)
 # Change based on your file location
-#mosj_2019_illumina_tidy <- read.csv("./data/mosj_2019_illumina_tidy")
-#mosj_2019_pacbio_tidy <- read.csv("./data/mosj_2019_pacbio_tidy")
+mosj_2019_illumina_tidy <- read.csv("./data/mosj_2019_illumina_tidy")
+mosj_2019_pacbio_tidy <- read.csv("./data/mosj_2019_pacbio_tidy")
 
 ## Merge PacBio and Illumina data in a single, tidy data.frame
 ASVs_merged <-
@@ -26,7 +26,7 @@ metadata <- read.table("./data/metadata", sep = "\t", header = TRUE)
 metadata <- metadata %>% filter(!is.na(NGS_code))
 
 # change according to your file location
-#selected_samples_mosj_2019 <- read.table("./data/selected_samples", header = TRUE)
+selected_samples_mosj_2019 <- read.table("./data/selected_samples", header = TRUE)
 
 # select relevant samples and variables
 mosj_env <- metadata %>%
