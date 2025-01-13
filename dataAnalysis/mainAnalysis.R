@@ -6,6 +6,7 @@ library(stringr)
 library(dplyr)
 library(ggplot2)
 #
+set.seed(123)
 qualitative_colors <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000")
 
 ## some pre-processing for figures
@@ -777,7 +778,7 @@ env_all_pac_species$Station <- as.factor(env_all_pac_species$Station)
 # Full-length 16S rRNA gene: GTDB vs Silva)
 plot(mds_pacbio_silva_vs_gtdb_nas_zeroed_t,
      display = "sites", type="p", 
-     main = "Full-length 16S rRNA gene: GTDB vs Silva \nSpecies level")
+     main = "A Full-length 16S rRNA gene: GTDB vs Silva \nSpecies level")
 points(mds_pacbio_silva_vs_gtdb_nas_zeroed_t,
        display = "sites",
        bg = env_all_pac$Database_col,
@@ -896,7 +897,7 @@ env_all_pac_phyla <- env_pac_gtdb_phyla %>%
 # Full-length 16S rRNA gene: GTDB vs Silva
 plot(mds_pacbio_silva_vs_gtdb_nas_zeroed_t_phyla,
      display = "sites", type="p", 
-     main = "Full-length 16S rRNA gene: GTDB vs Silva \nPhylum level")
+     main = "B V4-V5 16S rRNA gene: GTDB vs Silva \nPhylum level")
 points(mds_pacbio_silva_vs_gtdb_nas_zeroed_t_phyla,
        display = "sites",
        bg = env_all_pac$Database_col,
@@ -1151,7 +1152,7 @@ par(mfrow = c(2,2))
 ## pacbio
 plot(mds_pacbio_silva_vs_gtdb_nas_zeroed_t_phyla,
      display = "sites", type="p", 
-     main = "Full-length 16S rRNA gene: GTDB vs Silva \nPhylum level")
+     main = "A Full-length 16S rRNA gene: GTDB vs Silva \nPhylum level")
 points(mds_pacbio_silva_vs_gtdb_nas_zeroed_t_phyla,
        display = "sites",
        bg = env_all_pac$Database_col,
@@ -1171,7 +1172,7 @@ with(env_all_pac_phyla,
 ## illumina
 plot(mds_illumina_silva_vs_gtdb_nas_zeroed_t_phylum,
      display = "sites", type="p", 
-     main = "Full-length 16S rRNA gene: GTDB vs Silva \nPhylum level")
+     main = "B V4-V5 16S rRNA gene: GTDB vs Silva \nPhylum level")
 points(mds_illumina_silva_vs_gtdb_nas_zeroed_t_phylum,
        display = "sites",
        bg = env_all_ilu$Database_col,
@@ -1192,7 +1193,7 @@ with(env_all_ilu,
 # Full-length 16S rRNA gene: GTDB vs Silva)
 plot(mds_pacbio_silva_vs_gtdb_nas_zeroed_t,
      display = "sites", type="p", 
-     main = "Full-length 16S rRNA gene: GTDB vs Silva \nSpecies level")
+     main = "C Full-length 16S rRNA gene: GTDB vs Silva \nSpecies level")
 points(mds_pacbio_silva_vs_gtdb_nas_zeroed_t,
        display = "sites",
        bg = env_all_pac$Database_col,
@@ -1211,7 +1212,7 @@ with(env_all_pac_species,
 ## illumina
 plot(mds_illumina_silva_vs_gtdb_nas_zeroed_t,
      display = "sites", type="p", 
-     main = "Full-length 16S rRNA gene: GTDB vs Silva \nSpecies level")
+     main = "D V4-V5 16S rRNA gene: GTDB vs Silva \nSpecies level")
 points(mds_illumina_silva_vs_gtdb_nas_zeroed_t,
        display = "sites",
        bg = env_all_ilu$Database_col,
